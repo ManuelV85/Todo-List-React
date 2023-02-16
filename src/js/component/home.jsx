@@ -14,6 +14,7 @@ const Home = () => {
 		if(e.key ==='Enter'){
 			setNewTask(prev => [...prev, e.target.value])
 			counter++
+			
 		}	
 	}
 
@@ -26,11 +27,11 @@ const deleteTask = (newTas) => {
 	<div className="container">
 		<div className="card">
 		<div className="card-body">
-			<h5> Task List.</h5>
-			<input  type="text" className="form-control" placeholder="Enter task" onKeyDown={e => validate(e)}/> 
+			<h5> TODO LIST</h5>
+			<input  type="text" className="form-control" placeholder="Add New Task..." onKeyDown={e => validate(e)}/> 
 			<p></p>
 			<ul className="list-group" >
-				<li id="first" className="list-group-item"> Added tasks:  {counter<1? "No Tasks, add task": counter}</li><p></p>
+				<li id="first" className="list-group-item"> Added tasks:  {newTask.length<1? "No Tasks, add task": newTask.length}</li><p></p>
 			</ul>
 			{newTask && newTask.map ((newTas) => {
 				return <ul className="list-group">
@@ -40,6 +41,7 @@ const deleteTask = (newTas) => {
 			}
 		</div>
 		</div>
+		
 	</div>
   );
 };
