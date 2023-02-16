@@ -30,15 +30,16 @@ const deleteTask = (newTas) => {
 			<h5> TODO LIST</h5>
 			<input  type="text" className="form-control" placeholder="Add New Task..." onKeyDown={e => validate(e)}/> 
 			<p></p>
-			<ul className="list-group" >
-				<li id="first" className="list-group-item"> Added tasks:  {newTask.length<1? "No Tasks, add task": newTask.length}</li><p></p>
-			</ul>
+			
 			{newTask && newTask.map ((newTas) => {
 				return <ul className="list-group">
 							<li key={newTas.toString()} onClick ={() => deleteTask(newTas.toString())}  className="list-group-item">{newTas}  <button  type="button" class="btn-close" aria-label="Close"></button></li><p></p>
 						</ul>	  
 			})
 			}
+			<ul className="list-group" >
+				<li id="first" className="list-group-item"> Added tasks:  {newTask.length<1? "No Tasks, add task": newTask.length}</li><p></p>
+			</ul>
 		</div>
 		</div>
 		
